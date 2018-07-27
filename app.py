@@ -14,7 +14,7 @@ messages = {'Sarah' : '', 'Anna' : '', 'Dan':'', 'Becky' : '', 'Will' : ''}
 global current_User
 current_User = 'Will'
 sender = ''
-reciever = ''
+receiver = ''
 #friend list
 will_friend=[]
 sarah_friend=[]
@@ -126,7 +126,7 @@ def show_message(name):
     img2 = Image.open(encoded_image_file)
     hidden_text = decode_image(img2)
 
-    if name == sender and reciever == current_User:
+    if name == sender and receiver == current_User:
         print(messages[current_User])
         print("Hidden text:\n{}".format(hidden_text))
         print('See Image?(yes/no)')
@@ -142,7 +142,7 @@ def show_message(name):
      # get the hidden text back ...
 
 def chat():
-    global reciever
+    global receiver
     chosen_friend_name = ''
     print('Chat')
     #sending a message
@@ -170,9 +170,9 @@ def chat():
             exit()
     else:
         print ('Invalid Choice')
-        reciever = ''
+        receiver = ''
         exit()
-    reciever = name[chosen_friend_position]
+    receiver = name[chosen_friend_position]
     chosen_friend_name = name[chosen_friend_position]
     return  chosen_friend_name
 
